@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Secure CI/CD Website</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            max-width: 800px;
+            width: 100%;
+        }
+        h1 {
+            color: #667eea;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .info-box {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 15px 0;
+            border-left: 4px solid #667eea;
+        }
+        .info-box h3 {
+            color: #764ba2;
+            margin-bottom: 10px;
+        }
+        .badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin: 5px;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #666;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 My Secure CI/CD Pipeline</h1>
+        
+        <div class="info-box">
+            <h3>Project Information</h3>
+            <p>This website is automatically deployed using AWS CodePipeline, CodeBuild, and secured with CloudFront.</p>
+            <p><strong>Version:</strong> 1.0</p>
+            <p><strong>Last Updated:</strong> December 2025</p>
+        </div>
+        
+        <div class="info-box">
+            <h3>Technologies Used</h3>
+            <span class="badge">AWS CodePipeline</span>
+            <span class="badge">AWS CodeBuild</span>
+            <span class="badge">Amazon S3</span>
+            <span class="badge">CloudFront</span>
+            <span class="badge">GitHub</span>
+            <span class="badge">HTTPS Only</span>
+        </div>
+        
+        <div class="info-box">
+            <h3>Security Features</h3>
+            <p> HTTPS-only access via CloudFront</p>
+            <p> Automatic SSL/TLS encryption</p>
+            <p> Secure content delivery</p>
+            <p> Automated deployments from Git</p>
+        </div>
+        
+        <div class="footer">
+            <p>Deployed automatically via CI/CD Pipeline</p>
+        </div>
+    </div>
+</body>
+</html>
