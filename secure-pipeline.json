@@ -1,0 +1,79 @@
+{
+    "pipeline": {
+        "name": "proj2-pipeline",
+        "roleArn": "arn:aws:iam::375810804590:role/CodePipelineRole",
+        "artifactStore": {
+            "type": "S3",
+            "location": "cloud-infra-proj2-artifacts"
+        },
+        "stages": [
+            {
+                "name": "Source",
+                "actions": [
+                    {
+                        "name": "SourceAction",
+                        "actionTypeId": {
+                            "category": "Source",
+                            "owner": "ThirdParty",
+                            "provider": "GitHub",
+                            "version": "1"
+                        },
+                        "outputArtifacts": [
+                            { "name": "SourceOutput" }
+                        ],
+                        "configuration": {
+                            "Owner": "D00256764",
+                            "Repo": "cloud_proj2",
+                            "Branch": "main",
+                            "OAuthToken": "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"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "Build",
+                "actions": [
+                    {
+                        "name": "BuildAction",
+                        "actionTypeId": {
+                            "category": "Build",
+                            "owner": "AWS",
+                            "provider": "CodeBuild",
+                            "version": "1"
+                        },
+                        "inputArtifacts": [
+                            { "name": "SourceOutput" }
+                        ],
+                        "outputArtifacts": [
+                            { "name": "BuildOutput" }
+                        ],
+                        "configuration": {
+                            "ProjectName": "proj2-build"
+                        }
+                    }
+                ]
+            },
+            {
+                "name": "Deploy",
+                "actions": [
+                    {
+                        "name": "S3Deploy",
+                        "actionTypeId": {
+                            "category": "Deploy",
+                            "owner": "AWS",
+                            "provider": "S3",
+                            "version": "1"
+                        },
+                        "inputArtifacts": [
+                            {"name": "BuildOutput"}
+                        ],
+                        "configuration": {
+                            "BucketName": "cloud-infra-proj2",
+                            "Extract": "true"
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+}
